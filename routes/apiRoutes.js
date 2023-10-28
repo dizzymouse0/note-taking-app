@@ -1,27 +1,41 @@
-const router = require('express').Router();
+const path = require("path");
+const router = require("express").Router();
+const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 
-const { saveNote, deleteNote } = require('../../lib/notes');
-let notes = require('../../db/db.json');
 
-// API routes
-// GET request
-router.get('/notes', (req, res) => {
-    res.json(notes);
+
+router.get("/notes", (req, res) => {
+  fs.readFile("./db/db.json", (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    const jsonData = JSON.parse(data);
+    // console.log(jsonData);
+    res.json(jsonData);
+  });
 });
 
-// POST request to make a note
-router.post('/notes', (req, res) => {
-    // creates a note in the db.json file
-    const newNote = req.body;  // matching call passed through from lib/notes
-    saveNote(newNote);
-    res.json(notes);
-});
+router.post("/notes", (req, res) => {
+  console.log(req.body);
+  fs.readFile("./db/db.json", (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
 
-// delete request for API
-router.delete('/notes:id', (req, res) => {
-    //uses the ID to delete a note
-    notes = deleteNote(req.params.id);
-    res.json(notes);
+    const jsonData = JSON.parse(data);
+    const newNote = req.body;
+    newNote.id = uuidv4();
+    jsonData.push(req.body);
+    // console.log(jsonData);
+    fs.writeFile("./db/db.json", JSON.stringify(jsonData), (err) => {
+      if (err) console.log(err);
+      else {
+        console.log("Note written successfully!");
+        res.json("New note added!");
+      }
+    });
+  });
 });
-
-module.exports = router;

@@ -4,11 +4,12 @@
   "description": "Express.js back end app to write and save notes",
   "main": "server.js",
   "scripts": {
-    "test": "npm start"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dizzymouse0",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "uuid": "^9.0.0"
   }
 }
