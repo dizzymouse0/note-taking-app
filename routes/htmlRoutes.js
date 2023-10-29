@@ -3,7 +3,7 @@ const path = require('path');
 
 // HTML routes returning the notes.html files
 router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/notes.html'));
+    res.sendFile(path.join(__dirname, '../../note-taking-app/public/notes.html'));
 });
 
 // HTML routes returning the index.html files
