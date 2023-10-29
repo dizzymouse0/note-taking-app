@@ -30,12 +30,16 @@ router.post("/notes", (req, res) => {
     newNote.id = uuidv4();
     jsonData.push(req.body);
     // console.log(jsonData);
+
     fs.writeFile("./db/db.json", JSON.stringify(jsonData), (err) => {
       if (err) console.log(err);
       else {
-        console.log("Note written successfully!");
+        console.log("Note written!");
         res.json("New note added!");
       }
     });
   });
 });
+
+
+module.exports = router;

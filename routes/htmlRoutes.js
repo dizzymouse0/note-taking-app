@@ -8,7 +8,7 @@ router.get('/notes', (req, res) => {
 
 // HTML routes returning the index.html files
 
-router.get('*', (req, res) => {
+router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
