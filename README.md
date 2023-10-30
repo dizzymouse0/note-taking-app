@@ -1,5 +1,4 @@
 # Express.js Note-Taking-App
-Deployed Heroku link: https://aqueous-castle-53044-41c6df6c3ada.herokuapp.com/
 
 ## Description
 A note taking application that can be used to write and save notes. It uses Express.js for back-end functionality.
@@ -16,9 +15,11 @@ A note taking application that can be used to write and save notes. It uses Expr
 
 ## Usage
  - At home, users are presented with Get Started button. They can then enter a new note by clicking the "+" symbol. Note titles and texts will show on the left and can be viewed.
+ - Notes can then be deleted from side panel.
 
  ![Note-Taking-App](/assets/images/screenCap1.png)
 
+Deployed Heroku link: https://aqueous-castle-53044-41c6df6c3ada.herokuapp.com/
 
 ## License
   ![License Badge](https://img.shields.io/badge/License-MIT-blue)
