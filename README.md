@@ -5,7 +5,7 @@ A note taking application that can be used to write and save notes. It uses Expr
 
 ## Table of Contents 
 - [Description](#description)
-- [Installation](#installtion)
+- [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 
