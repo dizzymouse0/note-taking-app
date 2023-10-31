@@ -4,10 +4,10 @@
 A note taking application that can be used to write and save notes. It uses Express.js for back-end functionality.
 
 ## Table of Contents 
+- [Description](#description)
 - [Installation](#installtion)
 - [Usage](#usage)
-- [Credits](#credits)
-- [Questions](#questions)
+- [License](#license)
 
 ## Installation
  - Clone the repo
